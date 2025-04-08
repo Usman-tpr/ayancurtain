@@ -16,7 +16,7 @@ export default function FeaturedCollection() {
         setCurtains(data);
         setLoading(false);
       } catch (err) {
-        setError("Gagal memuat koleksi langsir");
+        setError("Gagal memuat koleksi langsir"+err);
         setLoading(false);
       }
     };

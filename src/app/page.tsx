@@ -8,7 +8,6 @@ import ContinuousImageSlider from "@/components/ContinuousImageSlider";
 import FancyImageSlider from "@/components/FancyImageSlider";
 import { useEffect, useState } from "react";
 import { api, Curtain } from "@/services/api";
-import FeaturedCollection from "@/components/FeaturedCollection";
 
 export default function Home() {
   const [featuredCurtains, setFeaturedCurtains] = useState<Curtain[]>([]);
