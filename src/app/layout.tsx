@@ -1,45 +1,128 @@
-import type { Metadata } from "next";
+"use client"
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Ayan Curtains - Kualiti & Gaya",
-  description: "Pembuat langsir premium dengan reka bentuk moden dan kualiti terbaik",
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <html lang="ms">
       <body className={inter.className}>
-        <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
-          <nav className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-gray-900">
-              Ayan Curtains
-            </Link>
-            <div className="hidden md:flex space-x-8">
-              <Link href="/collections" className="text-gray-600 hover:text-gray-900">
-                Koleksi
+        <header className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+          <nav className="max-w-7xl mx-auto px-4 py-3">
+            <div className="flex justify-between items-center">
+              <Link href="/" className="flex items-center space-x-3">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Ayan Curtains Logo"
+                  width={60}
+                  height={60}
+                  className="rounded-full"
+                />
+                <span className="text-2xl md:text-2xl font-bold text-gray-900">Ayan Curtains</span>
               </Link>
-              <Link href="/custom" className="text-gray-600 hover:text-gray-900">
-                Tempahan Khas
-              </Link>
-              <Link href="/about" className="text-gray-600 hover:text-gray-900">
-                Tentang Kami
-              </Link>
-              <Link href="/contact" className="text-gray-600 hover:text-gray-900">
-                Hubungi
-              </Link>
+              
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center space-x-8">
+                <Link 
+                  href="/collections" 
+                  className="text-gray-600 hover:text-gray-900 font-medium hover:scale-105 transition-transform"
+                >
+                  Koleksi
+                </Link>
+                <Link 
+                  href="/custom" 
+                  className="text-gray-600 hover:text-gray-900 font-medium hover:scale-105 transition-transform"
+                >
+                  Tempahan Khas
+                </Link>
+                <Link 
+                  href="/about" 
+                  className="text-gray-600 hover:text-gray-900 font-medium hover:scale-105 transition-transform"
+                >
+                  Tentang Kami
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors font-medium"
+                >
+                  Hubungi
+                </Link>
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden p-3 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <svg
+                  className="h-8 w-8"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  {isMenuOpen ? (
+                    <path d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
+
+            {/* Mobile Navigation */}
+            <div
+              className={`md:hidden transition-all duration-300 ease-in-out ${
+                isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+              } overflow-hidden`}
+            >
+              <div className="py-4 space-y-4">
+                <Link
+                  href="/collections"
+                  className="block text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors text-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Koleksi
+                </Link>
+                <Link
+                  href="/custom"
+                  className="block text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors text-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Tempahan Khas
+                </Link>
+                <Link
+                  href="/about"
+                  className="block text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors text-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Tentang Kami
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block bg-blue-600 text-white px-4 py-3 rounded-md hover:bg-blue-700 transition-colors text-lg text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Hubungi
+                </Link>
+              </div>
             </div>
           </nav>
         </header>
-        <main className="pt-16">{children}</main>
+
+        <main className="pt-24">{children}</main>
 
         {/* Floating WhatsApp Button */}
         <a

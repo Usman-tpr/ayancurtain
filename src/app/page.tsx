@@ -4,8 +4,11 @@ import Link from "next/link";
 import CurtainSlider from "@/components/CurtainSlider";
 import ImageSlider from "@/components/ImageSlider";
 import AboutTeamSlider from "@/components/AboutTeamSlider";
+import ContinuousImageSlider from "@/components/ContinuousImageSlider";
+import FancyImageSlider from "@/components/FancyImageSlider";
 import { useEffect, useState } from "react";
 import { api, Curtain } from "@/services/api";
+import FeaturedCollection from "@/components/FeaturedCollection";
 
 export default function Home() {
   const [featuredCurtains, setFeaturedCurtains] = useState<Curtain[]>([]);
@@ -56,7 +59,10 @@ export default function Home() {
       </section>
 
       {/* About & Team Slider */}
-     
+   
+
+      {/* Continuous Image Slider */}
+   
 
       {/* Featured Collection Slider */}
       {!loading && featuredCurtains.length > 0 && (
@@ -99,8 +105,7 @@ export default function Home() {
           "/images/WhatsApp Image 2025-03-24 at 20.55.32_ffe7e88b.jpg",
         ]}
       />
-       <AboutTeamSlider />
-
+   <ContinuousImageSlider />
       {/* Featured Collections */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
@@ -170,7 +175,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 mb-10 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Bersedia untuk Mengubah Ruang Anda?
@@ -186,6 +191,11 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      <FancyImageSlider />
+    <div className="mt-10">
+    <AboutTeamSlider />
+    </div>
     </div>
   );
 }

@@ -3,18 +3,18 @@ import Image from "next/image";
 export default function About() {
   const teamMembers = [
     {
-      name: "John Smith",
-      role: "Founder & CEO",
+      name: "Ahmad Ismail",
+      role: "Pengasas & Ketua Pegawai Eksekutif",
       image: "/images/IMG-20250324-WA0065.jpg",
     },
     {
-      name: "Sarah Johnson",
-      role: "Design Director",
+      name: "Siti Aminah",
+      role: "Pengarah Reka Bentuk",
       image: "/images/WhatsApp Image 2025-03-24 at 20.55.32_a0498e87.jpg",
     },
     {
-      name: "Michael Chen",
-      role: "Production Manager",
+      name: "Muhammad Ali",
+      role: "Pengurus Pengeluaran",
       image: "/images/WhatsApp Image 2025-03-24 at 20.55.32_ffe7e88b.jpg",
     },
   ];
@@ -26,14 +26,14 @@ export default function About() {
         <div className="absolute inset-0">
           <Image
             src="/images/IMG-20250324-WA0076.jpg"
-            alt="About Ayan Curtains"
+            alt="Tentang Ayan Curtains"
             fill
             className="object-cover brightness-75"
           />
         </div>
         <div className="relative z-10 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-          <p className="text-xl md:text-2xl">Crafting beautiful spaces since 1995</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Tentang Kami</h1>
+          <p className="text-xl md:text-2xl">Menghasilkan ruang indah sejak 1995</p>
         </div>
       </section>
 
@@ -42,26 +42,24 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Kisah Kami</h2>
               <p className="text-gray-600 text-lg mb-6">
-                Founded in 1995, Ayan Curtains began as a small workshop with a big dream:
-                to transform ordinary spaces into extraordinary ones through the art of
-                window treatments.
+                Ditubuhkan pada tahun 1995, Ayan Curtains bermula sebagai bengkel kecil dengan impian besar:
+                untuk mengubah ruang biasa menjadi luar biasa melalui seni langsir dan hiasan tingkap.
               </p>
               <p className="text-gray-600 text-lg mb-6">
-                Over the years, weve grown into a premier curtain manufacturer and
-                supplier, known for our commitment to quality, craftsmanship, and
-                innovative designs.
+                Seiring dengan masa, kami telah berkembang menjadi pengeluar dan pembekal langsir terkemuka,
+                dikenali dengan komitmen kami terhadap kualiti, kemahiran tangan, dan reka bentuk inovatif.
               </p>
               <p className="text-gray-600 text-lg">
-                Today, we continue to uphold our founding principles while embracing
-                modern design trends and sustainable practices.
+                Hari ini, kami terus mengekalkan prinsip asas kami sambil mengadaptasi
+                trend reka bentuk moden dan amalan lestari.
               </p>
             </div>
             <div className="relative h-[400px]">
               <Image
                 src="/images/IMG-20250324-WA0066.jpg"
-                alt="Our Workshop"
+                alt="Bengkel Kami"
                 fill
                 className="object-cover rounded-lg"
               />
@@ -74,24 +72,24 @@ export default function About() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Our Values
+            Nilai-Nilai Kami
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Quality",
+                title: "Kualiti",
                 description:
-                  "We use only the finest materials and maintain strict quality control at every step of production.",
+                  "Kami hanya menggunakan bahan-bahan terbaik dan mengekalkan kawalan kualiti yang ketat pada setiap langkah pengeluaran.",
               },
               {
-                title: "Innovation",
+                title: "Inovasi",
                 description:
-                  "We continuously explore new designs and techniques to bring fresh ideas to window treatments.",
+                  "Kami sentiasa meneroka reka bentuk dan teknik baru untuk membawa idea-idea segar dalam hiasan tingkap.",
               },
               {
-                title: "Sustainability",
+                title: "Kelestarian",
                 description:
-                  "We're committed to eco-friendly practices and sustainable materials in our manufacturing process.",
+                  "Kami komited kepada amalan mesra alam dan penggunaan bahan-bahan lestari dalam proses pembuatan kami.",
               },
             ].map((value, index) => (
               <div
@@ -110,7 +108,7 @@ export default function About() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Our Team
+            Pasukan Kami
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
