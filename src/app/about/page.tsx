@@ -49,7 +49,7 @@ export default function About() {
                 window treatments.
               </p>
               <p className="text-gray-600 text-lg mb-6">
-                Over the years, we've grown into a premier curtain manufacturer and
+                Over the years, weve grown into a premier curtain manufacturer and
                 supplier, known for our commitment to quality, craftsmanship, and
                 innovative designs.
               </p>
